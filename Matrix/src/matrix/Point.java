@@ -35,7 +35,9 @@ public class Point implements Comparable {
     public void setY(int y){
         this.y = y;
     }
-    public int compareTo(Point o){
-        
+    
+    @Override
+    public int compareTo(Object o){
+        return 0;
     }
 }
