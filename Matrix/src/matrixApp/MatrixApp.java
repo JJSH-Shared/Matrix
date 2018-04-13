@@ -53,7 +53,7 @@ public class MatrixApp {
         for (Matrix matrix: matrixList) {
             menu += ("(" + i++ + "). " + matrix + "\n");
         }
-        menu += "\nSelect matrix to manage\n";
+        menu += "\nSelect matrix\n";
         menu += "(Q). << Back\n";
         System.out.println(menu);
     }
@@ -92,7 +92,14 @@ public class MatrixApp {
                         System.out.println("Select matrix to sum:\n");
                         showSelect();
                         id = Integer.parseInt(System.console().readLine("id = "));
-                        matrix.sum(matrixList.get(id));
+                        System.out.println("Sum:\n");
+                        matrix.print();
+                        System.out.println(" ++++++++");
+                        Matrix other = matrixList.get(id);
+                        other.print();
+                        System.out.println(" ========");
+                        matrix.sum(other);
+                        matrix.print();
                         break;
                     case "p":
                         System.out.println("Contents:\n");
