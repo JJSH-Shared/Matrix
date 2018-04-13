@@ -1,5 +1,7 @@
 package matrix;
 
+import java.util.TreeMap;
+
 /**
  *
  * @author Joni, Sampo
@@ -10,7 +12,7 @@ public class Matrix {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        TreeMap<Point, Integer> values = new TreeMap<>();
     }
     
 }
