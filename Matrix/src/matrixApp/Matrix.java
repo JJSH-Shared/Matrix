@@ -68,4 +68,8 @@ public class Matrix {
             System.out.println();
         }        
     }
+    
+    public String toString(){
+        return this.getRowCount() + " X " + this.getColCount();
+    }
 }
