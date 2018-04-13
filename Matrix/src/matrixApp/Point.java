@@ -38,6 +38,22 @@ public class Point implements Comparable {
     
     @Override
     public int compareTo(Object o){
-        return 0;
+        final int BEFORE = -1;
+        final int EQUAL = 0;
+        final int AFTER = 1;
+
+        //this optimization is usually worthwhile, and can
+        //always be added
+        if ( this == o ) return EQUAL;
+    
+        final Point that = (Point)o;
+        
+        if (this.x < that.x ) { return BEFORE; }
+        if (this.x > that.x ) { return AFTER; }
+
+        if (this.y < that.y ) { return BEFORE; }
+        if (this.y > that.y ) { return AFTER; }
+
+        return EQUAL;
     }
 }
