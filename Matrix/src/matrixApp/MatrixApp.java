@@ -29,9 +29,6 @@ public class MatrixApp {
                 case "l":
                     list();
                     break;
-                case "s":
-                    sum();
-                    break;
                 case "q":
                     System.exit(0);
                     break;
@@ -47,7 +44,6 @@ public class MatrixApp {
         String menu = "MATRIX\n";
         menu += "(C). Create new matrix\n";
         menu += "(L). List matrixes\n";
-        menu += "(S). Sum two matrixes\n";
         menu += "(Q). Quit\n";
         System.out.println(menu);
     }
@@ -56,10 +52,10 @@ public class MatrixApp {
         String menu = "SELECT MATRIX\n";
         int i = 0;
         for (Matrix matrix: matrixList) {
-            System.out.println("(" + i++ + "). " + matrix);
+            menu += ("(" + i++ + "). " + matrix + "\n");
         }
-        menu += "Select matrix to manage\n";
-        menu += "\n(Q). Back to Main\n";
+        menu += "\nSelect matrix to manage\n";
+        menu += "(Q). Back to Main\n";
         System.out.println(menu);
     }
     
@@ -124,9 +120,4 @@ public class MatrixApp {
        }
        
     }
-    
-    private static void sum() {
-        System.out.println("sum");
-    }
-    
 }
