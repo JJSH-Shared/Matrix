@@ -65,7 +65,11 @@ public class Matrix {
         if (this.getRowCount() == other.getRowCount() && this.getColCount() == other.getColCount()){
             for (int i=0; i<=this.MaxRow; i++){
                 for (int j=0; j<=this.MaxColumn; j++){
-                    this.values.replace(new Point(j,i), this.get(j,i) + other.get(j,i));
+                    if (other.get(j,i) != 0 && this.get(j,i) == 0){
+                        this.values.put(new Point(j,i), this.get(j,i) + other.get(j,i));
+                    }else {
+                        this.values.replace(new Point(j,i), this.get(j,i) + other.get(j,i));
+                    }
                 }
             }        
             return true;
