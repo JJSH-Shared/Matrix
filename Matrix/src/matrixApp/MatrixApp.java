@@ -7,12 +7,12 @@ import java.util.ArrayList;
  * @author Joni, Sampo
  */
 public class MatrixApp {
+    private static ArrayList<Matrix> matrixList = new ArrayList<>();
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArrayList<Matrix> matrixList = new ArrayList<>();
         
         if (System.console() == null)
         {
@@ -53,11 +53,13 @@ public class MatrixApp {
     }
     
     private static void add() {
-        System.out.println("add");
+        matrixList.add(new Matrix());
     }
     
     private static void list() {
-        System.out.println("list");
+       for (Matrix matrix: matrixList) {
+           System.out.println(matrix);
+       }
     }
     
     private static void sum() {
