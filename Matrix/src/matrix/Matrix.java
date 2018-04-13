@@ -2,7 +2,7 @@ package matrix;
 
 /**
  *
- * @author Joni
+ * @author Joni, Sampo
  */
 public class Matrix {
 
