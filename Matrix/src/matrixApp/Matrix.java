@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 /**
  *
- * @author Joni
+ * @author Joni Juntunen, Sampo Harjula
  */
 public class Matrix {
     private int MaxRow = 0;
