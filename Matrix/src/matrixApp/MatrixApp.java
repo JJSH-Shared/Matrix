@@ -66,7 +66,6 @@ public class MatrixApp {
         
         String menu = "MATRIX - " + matrix + "\n";
         menu += "(A). Add value\n";
-        menu += "(D). Delete value\n";
         menu += "(M). Mulptiply values\n";
         menu += "(P). Print\n";
         menu += "(Q). Back to Matrix list\n";
@@ -85,8 +84,6 @@ public class MatrixApp {
                         y = Integer.parseUnsignedInt(System.console().readLine("y = "));
                         value = Integer.parseInt(System.console().readLine("value = "));
                         matrix.set(x, y, value);
-                        break;
-                    case "d":
                         break;
                     case "m":
                         multiply = Integer.parseInt(System.console().readLine("value = "));
