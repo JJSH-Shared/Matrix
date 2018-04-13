@@ -6,7 +6,7 @@ import java.util.TreeMap;
  *
  * @author Joni, Sampo
  */
-public class Matrix {
+public class MatrixApp {
 
     /**
      * @param args the command line arguments
