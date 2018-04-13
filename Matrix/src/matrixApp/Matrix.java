@@ -102,6 +102,6 @@ public class Matrix {
     }
     
     public String toString(){
-        return (this.getRowCount()-1) + " X " + (this.getColCount() - 1);
+        return this.MaxColumn + " X " + this.MaxRow;
     }
 }
