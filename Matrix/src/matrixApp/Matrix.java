@@ -17,14 +17,16 @@ public class Matrix {
     public void set(int x, int y, int value){
         
         if (this.MaxRow < x){this.MaxRow = x;}
-        if (this.MaxColumn < y){this.MaxRow = y;}
+        if (this.MaxColumn < y){this.MaxColumn = y;}
         
         this.values.put(new Point(x,y), value);
     }
     
     public int get(int x, int y){
-        if (this.values.get(new Point(x,y)) != null){
-            return this.values.get(new Point(x,y));
+        Point tempyx = new Point(x,y);
+        
+        if (this.values.get(tempyx) != null){
+            return this.values.get(tempyx);
         }else {
             return 0;
         }
