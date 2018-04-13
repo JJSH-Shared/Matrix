@@ -14,6 +14,12 @@ public class Matrix {
  
     Matrix(){}
     
+    /**
+     *
+     * @param x
+     * @param y
+     * @param value
+     */
     public void set(int x, int y, int value){
         
         if (this.MaxRow < x){this.MaxRow = x;}
@@ -22,6 +28,12 @@ public class Matrix {
         this.values.put(new Point(x,y), value);
     }
     
+    /**
+     *
+     * @param x
+     * @param y
+     * @return
+     */
     public int get(int x, int y){
         Point tempyx = new Point(x,y);
         
@@ -32,6 +44,10 @@ public class Matrix {
         }
     }
     
+    /**
+     *
+     * @param coefficient
+     */
     public void product(int coefficient){
         for (int i=0; i<this.MaxRow; i++){
             for (int j=0; j<this.MaxColumn; j++){
@@ -40,6 +56,11 @@ public class Matrix {
         }
     }
     
+    /**
+     *
+     * @param other
+     * @return
+     */
     public boolean sum(Matrix other){
         if (this.getRowCount() == other.getRowCount() && this.getColCount() == other.getColCount()){
             for (int i=0; i<this.MaxRow; i++){
@@ -52,14 +73,25 @@ public class Matrix {
         return false;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getRowCount(){
         return this.MaxRow + 1;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getColCount(){
         return this.MaxColumn + 1;
     }
     
+    /**
+     *
+     */
     public void print(){        
         for (int i=0; i<this.MaxRow; i++){
             for (int j=0; j<this.MaxColumn; j++){
