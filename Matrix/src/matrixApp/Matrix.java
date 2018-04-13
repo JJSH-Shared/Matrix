@@ -103,6 +103,10 @@ public class Matrix {
     
     @Override
     public String toString(){
-        return this.MaxColumn + " X " + this.MaxRow;
+        if (this.MaxRow > 0 || this.MaxColumn > 0){
+            return this.MaxColumn + " X " + this.MaxRow;
+        }else {
+            return "0 X 0";
+        }
     }
 }
