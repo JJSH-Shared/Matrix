@@ -77,7 +77,7 @@ public class MatrixApp {
         boolean run = true;
         while(run) {
             showManage(matrix);
-            int x, y, value;
+            int x, y, value, multiply;
             try {
                 switch(System.console().readLine("command: ").toLowerCase()) {
                     case "a":
@@ -89,7 +89,8 @@ public class MatrixApp {
                     case "d":
                         break;
                     case "m":
-                        matrix.product(2);
+                        multiply = Integer.parseInt(System.console().readLine("value = "));
+                        matrix.product(multiply);
                         break;
                     case "p":
                         matrix.print();
