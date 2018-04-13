@@ -53,12 +53,13 @@ public class MatrixApp {
     }
     
     private static void showSelect() {
+        String menu = "SELECT MATRIX\n";
         int i = 0;
         for (Matrix matrix: matrixList) {
             System.out.println("(" + i++ + "). " + matrix);
         }
-        String menu = "\nSelect matrix to manage\n";
-        menu += "(Q). Back to Main\n";
+        menu += "Select matrix to manage\n";
+        menu += "\n(Q). Back to Main\n";
         System.out.println(menu);
     }
     
