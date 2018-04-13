@@ -70,6 +70,6 @@ public class Matrix {
     }
     
     public String toString(){
-        return this.getRowCount() + " X " + this.getColCount();
+        return this.getRowCount()-1 + " X " + this.getColCount()-1;
     }
 }
