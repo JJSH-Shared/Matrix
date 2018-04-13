@@ -70,6 +70,6 @@ public class Matrix {
     }
     
     public String toString(){
-        return this.MaxRow + " X " + this.MaxColumn;
+        return this.getRowCount() + " X " + this.getColCount();
     }
 }
