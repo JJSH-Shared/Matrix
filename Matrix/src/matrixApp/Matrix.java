@@ -22,8 +22,8 @@ public class Matrix {
      */
     public void set(int x, int y, int value){
         
-        if (this.MaxRow < x){this.MaxRow = x;}
-        if (this.MaxColumn < y){this.MaxColumn = y;}
+        if (this.MaxRow < y){this.MaxRow = y;}
+        if (this.MaxColumn < x){this.MaxColumn = x;}
         
         this.values.put(new Point(x,y), value);
     }
