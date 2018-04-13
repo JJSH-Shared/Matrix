@@ -23,7 +23,11 @@ public class Matrix {
     }
     
     public int get(int x, int y){
-        return this.values.get(new Point(x,y));
+        if (this.values.get(new Point(x,y)) != null){
+            return this.values.get(new Point(x,y));
+        }else {
+            return 0;
+        }
     }
     
     public void product(int coefficient){
@@ -54,10 +58,10 @@ public class Matrix {
         return this.MaxColumn + 1;
     }
     
-    public void print(){
+    public void print(){        
         for (int i=0; i<this.MaxRow; i++){
-            for (int j=0; j<this.MaxColumn; j++){                
-                System.out.print(" " + this.values.get(this.get(i,j)));                
+            for (int j=0; j<this.MaxColumn; j++){
+                System.out.print(" " + this.get(i,j));
             }
             System.out.println();
         }        
