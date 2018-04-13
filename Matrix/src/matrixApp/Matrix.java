@@ -49,8 +49,8 @@ public class Matrix {
      * @param coefficient
      */
     public void product(int coefficient){
-        for (int i=0; i<this.MaxRow; i++){
-            for (int j=0; j<this.MaxColumn; j++){
+        for (int i=0; i<=this.MaxRow; i++){
+            for (int j=0; j<=this.MaxColumn; j++){
                 this.values.replace(new Point(i,j), this.get(i,j) * coefficient);
             }
         }
@@ -63,8 +63,8 @@ public class Matrix {
      */
     public boolean sum(Matrix other){
         if (this.getRowCount() == other.getRowCount() && this.getColCount() == other.getColCount()){
-            for (int i=0; i<this.MaxRow; i++){
-                for (int j=0; j<this.MaxColumn; j++){
+            for (int i=0; i<=this.MaxRow; i++){
+                for (int j=0; j<=this.MaxColumn; j++){
                     this.values.replace(new Point(i,j), this.get(i,j) * other.get(i, j));
                 }
             }        
@@ -93,14 +93,15 @@ public class Matrix {
      *
      */
     public void print(){        
-        for (int i=0; i<this.MaxRow; i++){
-            for (int j=0; j<this.MaxColumn; j++){
+        for (int i=0; i<=this.MaxRow; i++){
+            for (int j=0; j<=this.MaxColumn; j++){
                 System.out.print(" " + this.get(i,j));
             }
             System.out.println();
         }        
     }
     
+    @Override
     public String toString(){
         return this.MaxColumn + " X " + this.MaxRow;
     }
