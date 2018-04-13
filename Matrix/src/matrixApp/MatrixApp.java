@@ -77,22 +77,29 @@ public class MatrixApp {
         boolean run = true;
         while(run) {
             showManage(matrix);
-            
-            switch(System.console().readLine().toLowerCase()) {
-                case "a":
-                    matrix.set(2, 2, 3);
-                    break;
-                case "d":
-                    break;
-                case "m":
-                    matrix.product(2);
-                    break;
-                case "p":
-                    matrix.print();
-                    break;
-                case "q":
-                    run = false;
-                    break;
+            int x, y, value;
+            try {
+                switch(System.console().readLine("command: ").toLowerCase()) {
+                    case "a":
+                        x = Integer.parseUnsignedInt(System.console().readLine("x = "));
+                        y = Integer.parseUnsignedInt(System.console().readLine("y = "));
+                        value = Integer.parseInt(System.console().readLine("value = "));
+                        matrix.set(x, y, value);
+                        break;
+                    case "d":
+                        break;
+                    case "m":
+                        matrix.product(2);
+                        break;
+                    case "p":
+                        matrix.print();
+                        break;
+                    case "q":
+                        run = false;
+                        break;
+                }
+            } catch (Exception ex) {
+                System.out.println("invalid value");
             }
         }
     }
@@ -104,7 +111,7 @@ public class MatrixApp {
     private static void list() {
        while(true) {
            showSelect();
-           String input = System.console().readLine().toLowerCase();
+           String input = System.console().readLine("command: ").toLowerCase();
            if (input.equals("q")) {
                break;
            }
