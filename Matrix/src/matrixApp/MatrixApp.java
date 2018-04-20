@@ -40,7 +40,8 @@ public class MatrixApp {
     }
     
     private static void showMenu() {
-        String menu = "MATRIX\n";
+        String menu = "********\n";
+        menu += "MATRIX\n";
         menu += "(C). Create new matrix\n";
         menu += "(L). List matrixes\n";
         menu += "(Q). Quit\n";
@@ -48,7 +49,8 @@ public class MatrixApp {
     }
     
     private static void showSelect() {
-        String menu = "SELECT MATRIX\n";
+        String menu = "********\n";
+        menu += "SELECT MATRIX\n";
         int i = 0;
         for (Matrix matrix: matrixList) {
             menu += ("(" + i++ + "). " + matrix + "\n");
@@ -59,8 +61,8 @@ public class MatrixApp {
     }
     
     private static void showManage(Matrix matrix) {
-        
-        String menu = "MATRIX - " + matrix + "\n";
+        String menu = "********\n";
+        menu += "MATRIX - " + matrix + "\n";
         menu += "(A). Add value\n";
         menu += "(M). Mulptiply values\n";
         menu += "(S). Sum matrix\n";
