@@ -25,7 +25,12 @@ public class Matrix {
         if (this.MaxRow < y){this.MaxRow = y;}
         if (this.MaxColumn < x){this.MaxColumn = x;}
         
-        this.values.put(new Point(x,y), value);
+        
+        if (value == 0 && this.get(x,y) > 0){
+            this.values.remove(new Point(x,y));
+        }else {
+            this.values.put(new Point(x,y), value);
+        }
     }
     
     /**
