@@ -33,11 +33,11 @@ public class Matrix {
 
             for (int j=0; j<=this.MaxRow; j++){
                 for (int i=0; i<=this.MaxColumn; i++){
-                    if (this.get(i,j) > 0 && i > this.MaxRow){
-                        this.MaxRow = i;
+                    if (this.get(i,j) > 0 && j > this.MaxRow){
+                        this.MaxRow = j;
                     }
-                    if (this.get(i,j) > 0 && j > this.MaxColumn){
-                        this.MaxColumn = j;
+                    if (this.get(i,j) > 0 && i > this.MaxColumn){
+                        this.MaxColumn = i;
                     }
                 }
             }
