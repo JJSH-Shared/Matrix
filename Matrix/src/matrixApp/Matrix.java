@@ -28,15 +28,16 @@ public class Matrix {
         
         if (value == 0 && this.get(x,y) > 0){
             this.values.remove(new Point(x,y));
-            this.MaxRow = 0;
-            this.MaxColumn = 0;
 
+            int tmpRow = 0;
+            int tmpColumn = 0;
+                       
             for (int j=0; j<=this.MaxRow; j++){
                 for (int i=0; i<=this.MaxColumn; i++){
-                    if (this.get(i,j) > 0 && j > this.MaxRow){
+                    if (this.get(i,j) > 0 && j > tmpRow){
                         this.MaxRow = j;
                     }
-                    if (this.get(i,j) > 0 && i > this.MaxColumn){
+                    if (this.get(i,j) > 0 && i > tmpColumn){
                         this.MaxColumn = i;
                     }
                 }
