@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Joni, Sampo
+ * @author Joni Juntunen 1602178, Sampo Harjula 1602177
  */
 public class MatrixApp {
     private static ArrayList<Matrix> matrixList = new ArrayList<>();
