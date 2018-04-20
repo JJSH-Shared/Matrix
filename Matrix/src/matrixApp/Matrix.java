@@ -28,6 +28,20 @@ public class Matrix {
         
         if (value == 0 && this.get(x,y) > 0){
             this.values.remove(new Point(x,y));
+            this.MaxRow = 0;
+            this.MaxColumn = 0;
+
+            for (int j=0; j<=this.MaxRow; j++){
+                for (int i=0; i<=this.MaxColumn; i++){
+                    if (this.get(i,j) > 0 && i > this.MaxRow){
+                        this.MaxRow = i;
+                    }
+                    if (this.get(i,j) > 0 && j > this.MaxColumn){
+                        this.MaxColumn = j;
+                    }
+                }
+            }
+            
         }else {
             this.values.put(new Point(x,y), value);
         }
@@ -54,9 +68,9 @@ public class Matrix {
      * @param coefficient
      */
     public void product(int coefficient){
-        for (int i=0; i<=this.MaxRow; i++){
-            for (int j=0; j<=this.MaxColumn; j++){
-                this.values.replace(new Point(j,i), this.get(j,i) * coefficient);
+        for (int j=0; j<=this.MaxRow; j++){
+            for (int i=0; i<=this.MaxColumn; i++){
+                this.values.replace(new Point(i,j), this.get(i,j) * coefficient);
             }
         }
     }
@@ -68,12 +82,12 @@ public class Matrix {
      */
     public boolean sum(Matrix other){
         if (this.getRowCount() == other.getRowCount() && this.getColCount() == other.getColCount()){
-            for (int i=0; i<=this.MaxRow; i++){
-                for (int j=0; j<=this.MaxColumn; j++){
+            for (int j=0; j<=this.MaxRow; j++){
+                for (int i=0; i<=this.MaxColumn; i++){
                     if (other.get(j,i) != 0 && this.get(j,i) == 0){
-                        this.values.put(new Point(j,i), this.get(j,i) + other.get(j,i));
+                        this.values.put(new Point(i,j), this.get(i,j) + other.get(i,j));
                     }else {
-                        this.values.replace(new Point(j,i), this.get(j,i) + other.get(j,i));
+                        this.values.replace(new Point(i,j), this.get(i,j) + other.get(i,j));
                     }
                 }
             }        
@@ -102,9 +116,9 @@ public class Matrix {
      *
      */
     public void print(){        
-        for (int i=0; i<=this.MaxRow; i++){
-            for (int j=0; j<=this.MaxColumn; j++){
-                System.out.print(" " + this.get(j,i));
+        for (int j=0; j<=this.MaxRow; j++){
+            for (int i=0; i<=this.MaxColumn; i++){
+                System.out.print(" " + this.get(i,j));
             }
             System.out.println();
         }        
